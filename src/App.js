@@ -1,23 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Todos from './Todos';
-import AddTodo from './AddTodo'
+import AddTodo from './AddTodo';
+import {connect} from 'react-redux';
+import {addTodo, deleteTodo} from './actions/todoActions';
 
-function App() {
-
-  const [todos, setTodos] = useState([]);
-
-  const addTodo = (todo) => {
-    const newTodo = {id: todos.length + 1, task: todo};
-    setTodos([...todos, newTodo]);
-  }
-
-  const deleteTodo = (todo) => {
-    const newTodos = todos.filter(item => item.id !== todo.id).map((todo, index) => {
-      todo.id = index + 1;
-      return todo;
-    });
-    setTodos(newTodos);
-  }
+function App(props) {
 
   return (
     <div className="App">
@@ -26,14 +13,27 @@ function App() {
       </header>
       <main>
         <section>
-          <Todos todos={todos} deleteTodo={deleteTodo}/>
-        </section>  
+          <Todos todos={props.todos} deleteTodo={props.deleteTodo}/>
+        </section>
         <section>
-          <AddTodo addTodo={addTodo}/>
+          <AddTodo addTodo={props.addTodo}/>
         </section>
       </main>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    todos: state.todos
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addTodo: (todo) => dispatch(addTodo(todo)),
+    deleteTodo: (todo) => dispatch(deleteTodo(todo))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Todos = ({todos, deleteTodo}) => {
 
-    const todoList = todos.length > 0 ?
+    const todoList = todos.length ?
     todos.map((todo, index) => 
     <div className="todo" key={index}>
         <span>{todo.task}</span>
