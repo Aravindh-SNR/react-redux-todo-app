@@ -1,8 +1,7 @@
 import React from 'react';
 import Todos from './Todos';
 import AddTodo from './AddTodo';
-import {connect} from 'react-redux';
-import {addTodo, deleteTodo} from './actions/todoActions';
+import ToggleStatus from './ToggleStatus';
 
 function App(props) {
 
@@ -13,27 +12,18 @@ function App(props) {
       </header>
       <main>
         <section>
-          <Todos todos={props.todos} deleteTodo={props.deleteTodo}/>
+          <Todos/> {/* section to display all the todo items */}
         </section>
         <section>
-          <AddTodo addTodo={props.addTodo}/>
+          <AddTodo/> {/* form to add new todo items */}
+        </section>
+        <section>
+          <p className="status_heading">Track tasks by status</p>
+          <ToggleStatus/> {/* section to toggle view and see todo items based on their completion status */}
         </section>
       </main>
     </div>
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    todos: state.todos
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    addTodo: (todo) => dispatch(addTodo(todo)),
-    deleteTodo: (todo) => dispatch(deleteTodo(todo))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
