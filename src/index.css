@@ -84,6 +84,7 @@ button {
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.5);
   color: white;
+  cursor: pointer;
 }
 
 /* tick and delete buttons of a todo item */
