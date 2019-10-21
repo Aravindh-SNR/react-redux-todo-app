@@ -51,6 +51,10 @@ h1 {
   padding: 10px;
 }
 
+.todo:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
 /* text part of the todo item */
 .todo span {
   overflow: auto;
