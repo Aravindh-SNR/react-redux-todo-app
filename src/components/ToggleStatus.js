@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {toggleView} from './actions/todoActions'
+import {toggleView} from '../actions/todoActions'
 
 const ToggleStatus = ({view, toggleView}) => {
     //buttons with event handlers for each view - the view is either 'all' or 'completed' or 'pending'

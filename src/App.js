@@ -1,7 +1,7 @@
 import React from 'react';
-import Todos from './Todos';
-import AddTodo from './AddTodo';
-import ToggleStatus from './ToggleStatus';
+import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
+import ToggleStatus from './components/ToggleStatus';
 
 function App(props) {
 

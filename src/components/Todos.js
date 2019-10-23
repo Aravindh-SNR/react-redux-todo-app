@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {toggleStatus, deleteTodo} from './actions/todoActions';
+import {toggleStatus, deleteTodo} from '../actions/todoActions';
 
 const Todos = ({todos, view, toggleStatus, deleteTodo}) => {
 
