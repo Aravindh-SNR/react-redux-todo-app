@@ -6,3 +6,5 @@ To run the app locally:
 1. Clone this repository
 2. Run npm install
 3. Run npm start
+
+Check the live app at https://aravindh-snr.github.io/react-redux-todo-app/
